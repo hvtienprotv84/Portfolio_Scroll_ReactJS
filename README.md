@@ -7,8 +7,8 @@
 - Lottie-React
 - FontAwesome
 - Lodash
-- Responsive Website và Mobile
 - Vite.js
+- Responsive Website và Mobile
 
 # RUN
 
