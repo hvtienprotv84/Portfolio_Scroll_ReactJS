@@ -1,0 +1,51 @@
+@keyframes hideIntro {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.intro-container {
+    background-color: var(--secundary-background);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: fixed;
+    z-index: 999;
+    top: 0px;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.intro-container>h1 {
+    color: white;
+
+    text-align: center;
+    font-size: clamp(45px, 8vw, 70px);
+    font-family: 'seasons';
+    font-weight: 100;
+
+    position: relative;
+    z-index: 999;
+
+    animation: hideIntro 1s ease 1s forwards;
+}
+
+.intro-container>p {
+    color: white;
+
+    text-align: center;
+    font-size: clamp(20px, 3vw, 25px);
+    font-family: 'aileron';
+
+    position: relative;
+    z-index: 999;
+
+    animation: hideIntro 1s ease 1s forwards;
+}

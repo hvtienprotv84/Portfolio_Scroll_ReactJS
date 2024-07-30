@@ -1,0 +1,202 @@
+@keyframes rotateAbout {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateAboutMobile {
+    from {
+        transform: rotate(0deg) scale(0.8);
+    }
+
+    to {
+        transform: rotate(360deg) scale(0.8);
+    }
+}
+
+@keyframes about-revealTitle {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.about-section {
+    background-color: var(--main-background);
+    position: relative;
+    z-index: 1;
+    border: 1px solid transparent;
+    min-height: 100vw;
+}
+
+.section-title>h1 {
+    font-size: clamp(12px, 12vw, 200px);
+    font-family: 'seasons';
+    font-weight: 100;
+    text-align: center;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    animation: about-revealTitle 100ms linear forwards;
+
+    height: 15vw;
+}
+
+.myName-letters {
+    display: inline-block;
+    transform: translateY(18vw) rotate(10deg);
+    transition: 1s;
+    transition-delay: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.section-content {
+    padding-inline: 5%;
+}
+
+.section-content__container {
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-inline: auto;
+
+    border: 1px solid transparent;
+    background-color: transparent;
+
+    overflow: hidden;
+
+    opacity: 0;
+    animation: about-revealTitle 0.7s ease 1s forwards;
+
+    position: relative;
+}
+
+.section-content__title {
+    margin-top: 8%;
+
+    background-color: transparent;
+    border-radius: 50%;
+
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    bottom: 0;
+
+    display: grid;
+    place-items: center;
+
+    animation: rotateAbout 20s linear infinite;
+}
+
+.section-content__title p {
+    position: absolute;
+    left: 100px;
+    top: -25px;
+    transition: 0.3s;
+}
+
+.section-content__title .resumee-letters {
+    display: inline-block;
+    position: absolute;
+    color: black;
+    transform-origin: 0 100px;
+    top: 0;
+    font-size: 22px;
+    font-family: 'cormorant';
+    font-weight: 100;
+}
+
+.content__icon {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid transparent;
+
+    width: 150px;
+    height: 150px;
+}
+
+.content__icon>span {
+    display: grid;
+    place-items: center;
+
+    border: 1px solid transparent;
+
+    width: 150px;
+    height: 150px;
+}
+
+.content__icon>span>img {
+    width: 150px;
+
+    border: 1px solid transparent;
+    border-radius: 50%;
+
+    position: absolute;
+    z-index: 10;
+}
+
+.section-content__about-me {
+    width: 80%;
+    margin-inline: auto;
+    margin-top: 10%;
+}
+
+.section-content__about-me p {
+    font-size: clamp(20px, 2.5vw, 25px);
+    font-family: 'aileron';
+    font-weight: 100;
+}
+
+.myDescription-text:first-child,
+.myDescription-text:nth-child(2) {
+    animation: about-revealTitle 2s ease 0.1s forwards;
+}
+
+.myDescription-text>div{
+    background-image: linear-gradient(90deg, black, black);
+    background-clip: text;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 0%;
+    -webkit-background-clip: text;
+
+    color: rgba(0, 0, 0, 0.2);
+    transition: 1s;
+    transition-delay: 0.3;
+}
+
+@media screen and (max-width:650px) {
+    .section-content__title {
+        animation: rotateAboutMobile 20s linear infinite forwards;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .myDescription-text>div{
+        background-image: none;
+        background-clip: unset;
+        background-size: 100%;
+        -webkit-background-clip: unset;
+
+        color: black;
+        transition: none;
+        transition-delay: none;
+    }
+}

@@ -1,0 +1,182 @@
+@keyframes transitionHomeReveal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes name-reveal {
+    from {
+        transform: translateY(20vw);
+    }
+
+    to {
+        transform: translateY(0vw);
+    }
+}
+
+@keyframes homeAbout-transition {
+    0% {
+        width: 0vw;
+        background-color: var(--secundary-background);
+    }
+
+    55% {
+        background-color: var(--main-background);
+    }
+
+    100% {
+        width: 100vw;
+        background-color: var(--main-background);
+    }
+}
+
+.home-section {
+    overflow: hidden;
+
+    background-color: var(--secundary-background);
+}
+
+.home-section>main {
+    max-width: 100vw;
+    max-height: 100dvh;
+
+    position: relative;
+
+    width: 100vw;
+    height: 100dvh;
+
+    opacity: 0;
+
+    animation: transitionHomeReveal 1s ease 0.3s forwards;
+}
+
+.home-section__title>* {
+    position: absolute;
+
+    color: white;
+
+    font-size: clamp(18px, 2.3vw, 23px);
+    font-weight: 100;
+    font-family: 'cormorant';
+}
+
+.home-section__title>img {
+    top: 3%;
+    left: 3%;
+
+    min-width: 60px;
+    width: 20vw;
+    max-width: 80px;
+}
+
+.home-section__title #my-role {
+    bottom: 8%;
+    left: 5%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-section__title #my-role span {
+    width: 2.3vw;
+    max-width: 23px;
+    min-width: 18px;
+
+    display: grid;
+    place-items: center;
+}
+
+.home-section__title #my-role img {
+    width: 100%;
+}
+
+.home-section__title #current-year {
+    bottom: 4%;
+    left: 5%;
+}
+
+.home-section__title #go-to__about {
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+
+    bottom: 5%;
+    right: 2%;
+}
+
+.home-section__title #go-to__about>img {
+    transform: rotate(210deg);
+
+    width: 3vw;
+    min-width: 25px;
+    max-width: 30px;
+
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.home-section__title #go-to__about:hover>img {
+    transform: rotate(-180deg);
+}
+
+.home-section__content {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+}
+
+.home-section__content>div h2 {
+    margin: 0;
+
+    color: white;
+
+    text-align: center;
+    font-size: clamp(20px, 8vw, 80px);
+    font-family: 'seasons';
+    font-weight: 100;
+    overflow: hidden;
+}
+
+.name-letters__home {
+    display: inline-block;
+
+    transform: translateY(20vw);
+    animation: name-reveal 1s ease-out 0.5s forwards;
+}
+
+.loader-wrap {
+    position: absolute;
+    z-index: 0;
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    
+    background: transparent;
+}
+
+.loader-wrap svg {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+
+    width: 100vw;
+    height: 110vh;
+    
+    fill: rgb(15,15,15);
+    background-color: white;
+}

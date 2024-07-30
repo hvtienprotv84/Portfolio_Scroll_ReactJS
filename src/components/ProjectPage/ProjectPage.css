@@ -1,0 +1,431 @@
+@keyframes revealText {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes buttonHover-arrow {
+    0% {
+        transform: translateX(-25px);
+    }
+    25% {
+        transform: translateX(-32px);
+    }
+    100% {
+        transform: translateX(25px);
+    }
+}
+
+@keyframes buttonHover-arrowDW {
+    0% {
+        transform: translateY(-25px);
+    }
+    25% {
+        transform: translateY(-32px);
+    }
+    100% {
+        transform: translateY(25px);
+    }
+}
+
+.project-page__section {
+    background-color: var(--main-background);
+    border: 1px solid var(--secundary-background);
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.project-page__section>main {
+    background-color: var(--secundary-background);
+}
+
+.project-page__section>main>div {
+    opacity: 0;
+
+    animation: revealText 2s linear forwards;
+}
+
+.project-page__section-title {
+    position: relative;
+
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.project-page__section-title>div {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-page__section-title>div>h2 {
+    color: white;
+    font-size: clamp(50px, 10vw, 100px);
+    font-family: 'seasons';
+    font-weight: 100;
+
+    margin: 0;
+
+    width: 100%;
+    text-align: center;
+
+    opacity: 0;
+
+    overflow: hidden;
+}
+
+.project-page__section-title .projectTitle-letters {
+    display: inline-block;
+
+    transform: translateY(18vw);
+    transition: 1s;
+    opacity: 0;
+    transition-delay: 0.2s;
+    transition-timing-function: ease;
+}
+
+.about-project {
+    width: 100%;
+
+    margin-inline: auto;
+}
+
+.about-project>p {
+    color: white;
+
+    width: 50%;
+    min-width: 265px;
+    max-width: 600px;
+
+    margin-inline: auto;
+
+    font-size: clamp(18px, 2vw, 20px);
+    font-family: 'cormorant';
+}
+
+.about-project>div {
+    width: 95%;
+
+    margin-inline: auto;
+}
+
+.about-project>div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-project>div:nth-child(2)>span>a {
+    border: 1px solid white;
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    gap: 25px;
+
+    opacity: 0.5;
+
+    width: 50px;
+    height: 50px;
+}
+.about-project>div:nth-child(2)>span img {
+    width: 50%;
+
+    transform: translateY(-25px);
+}
+
+.about-project>div img {
+    width: 100%;
+
+    transition: transform 0.5s;
+}
+
+.about-project>div:nth-child(2) a:hover>img {
+    animation: buttonHover-arrowDW 0.5s ease forwards;
+}
+
+.project-page__section-content {
+    background-color: var(--main-background);
+
+    border: 1px solid transparent;
+}
+
+.project-page__section-content>div,
+.project-page__section-details {
+    background-color: var(--main-background);
+
+    border: 1px solid transparent;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.project-page__section-content>div {
+    width: 80%;
+
+    margin-inline: auto;
+    margin-top: 4%;
+}
+
+.project-page__section-content>h2 {
+    font-size: clamp(25px,4vw,40px);
+    font-weight: 100;
+    font-family: 'seasons';
+    text-align: center;
+
+    margin-top: 8%;
+}
+
+.section-content__about {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+
+    padding: 3%;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: clamp(16, 1.8vw, 18px);
+    font-family: 'aileron';
+
+    width: 80%;
+    max-width: 400px;
+
+    margin-inline: auto;
+}
+
+.section-content__about>h2 {
+    font-size: clamp(20px, 2.5vw, 25px);
+    font-family: 'seasons';
+    font-weight: 100;
+
+    opacity: 0.7;
+}
+
+.section-content__about>p {
+    font-size: clamp(20px, 2.5vw, 25px);
+    font-family: 'aileron';
+}
+
+.project-page__section-content>div ol {
+    margin: 0;
+}
+
+.project-page__section-content>div li {
+    list-style: disc;
+}
+
+.section-content__about:last-child {
+    max-width: 200px;
+}
+
+.section-content__about:last-child>h2 {
+    text-align: center;
+}
+
+
+.project-page__section-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-page__section-details>h2 {
+    text-align: center;
+
+    font-family: 'seasons';
+    font-weight: 100;
+    font-size: clamp(25px, 4vw, 40px);
+
+    margin-inline: auto;
+
+    margin-top: 10%;
+}
+
+.project-page__section-details>p {
+    font-size: clamp(18px, 2vw, 20px);
+    font-family: 'cormorant';
+    text-align: center;
+
+    width: 50%;
+    min-width: 265px;
+    max-width: 600px;
+    
+    margin-inline: auto;
+}
+
+.sectuib-details__animation {
+    margin-inline: auto;
+    margin-bottom: 5%;
+
+    width: 10vw;
+    max-width: 80px;
+    min-width: 50px;
+
+    cursor: pointer;
+}
+
+.section-details__img {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.section-details__img>div {
+    width: 80%;
+    min-width: 260px;
+    max-width: 1600px;
+
+    min-height: 173px;
+    max-height: 1067px;
+
+    margin-inline: auto;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    margin-bottom: 5%;
+}
+
+.section-details__img img {
+    width: 100%;
+    height: 100%;
+
+    transition: 0.5s;
+}
+
+.section-details__img>div:hover img {
+    transform: scale(1.13);
+} 
+
+.section-end__next {
+    background-color: var(--secundary-background);
+    border: 1px solid transparent;
+
+    width: 100%;
+}
+
+.section-end__next>h2 {
+    font-size: clamp(40px, 5vw, 50px);
+    font-weight: 100;
+    font-family: 'cormorant';
+    text-align: center;
+
+    margin-top: 10%;
+
+    color: white;
+}
+
+.section-end__next>button {
+    width: 12vw;
+    max-width: 150px;
+    min-width: 100px;
+
+    font-size: clamp(16px, 1.8vw, 18px);
+    font-family: 'aileron';
+
+    border-radius: 15px;
+    border: 1px solid white;
+    color: white;
+    background-color: var(--secundary-background);
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-inline: auto;
+    margin-bottom: 10%;
+    padding: 0.3%;
+
+    transition: 0.3s;
+}
+
+.section-end__next>button>span {
+    width: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    overflow: hidden;
+}
+
+.section-end__next>button img {
+    width: 100%;
+
+    transform: translateX(-25px);
+
+    transition: 0.5s;
+}
+
+.section-end__next>button:hover img {
+    animation: buttonHover-arrow 0.5s ease forwards;
+}
+
+.project-page__next-project-transition {
+    width: 100vw;
+    height: 0vh;
+
+    background-color: var(--main-background);
+
+    transition: height 0.9s, background-color 0.5s;
+    transition-delay: 0.3s;
+    transition-timing-function: ease-in-out;
+
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+}
+
+@media screen and (max-width:650px) {
+    .project-page__section-title {
+        height: 70vh;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .project-page__section-title {
+        height: 50vh;
+    }
+
+    .about-project>div:nth-child(2) {
+        margin-bottom: 5%;
+    }
+}

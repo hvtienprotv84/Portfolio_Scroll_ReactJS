@@ -1,0 +1,262 @@
+@keyframes shake {
+    0% {
+        transform: translateX(0%);
+    }
+
+    25% {
+        transform: translateX(-5%);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    75% {
+        transform: translateX(5%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.talk-section {
+    position: relative;
+    z-index: 1;
+
+    background-color: var(--main-background);
+
+    width: 100%;
+    height: 100vh;
+
+    border: 1px solid var(--main-background);
+}
+
+.talk-section__title>h2 {
+    font-size: clamp(50px, 10vw, 80px);
+    font-family: 'seasons';
+    font-weight: 100;
+    text-align: center;
+}
+
+.talk-section__content {
+    position: relative;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    justify-content: center;
+
+    margin-inline: auto;
+    margin-bottom: 2%;
+}
+
+.social-media {
+    width: 90%;
+    margin-inline: auto;
+    margin-bottom: 50px;
+}
+
+.social-media__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media__container>ol {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(20px,10vw,150px);
+}
+
+.social-link {
+    font-size: 20px;
+    font-family: 'seasons';
+    font-weight: 100;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.social-link>div {
+    position: absolute;
+    z-index: 1;
+    border-bottom: 1px solid black;
+    width: 0%;
+    height: 0%;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+.social-link:hover div {
+    width: 100%;
+}
+
+.social-link a {
+    color: black;
+}
+
+.form-container {
+    width: 100%;
+
+    margin-inline: auto;
+}
+
+.name-form__container {
+    grid-area: name;
+}
+
+.email-form__container {
+    grid-area: email;
+}
+
+.message-form__container {
+    grid-area: message;
+}
+
+.send-form__container {
+    grid-area: send;
+}
+
+.form-container>form {
+    display: grid;
+    grid-template-areas:
+        'name name name send'
+        'email email email send'
+        'message message message send';
+
+    width: 60%;
+
+    margin-inline: auto;
+}
+
+.name-form__container,
+.email-form__container,
+.message-form__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 50px;
+}
+
+.name-form__container>label,
+.email-form__container>label,
+.message-form__container>label {
+    text-align: left;
+    font-size: 22px;
+    font-family: 'cormorant';
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.name-form__container>input,
+.email-form__container>input,
+.message-form__container>textarea {
+    font-size: 18px;
+    font-family: 'cormorant';
+
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+
+    padding: 0.5%;
+    margin-inline: auto;
+
+    width: 100%;
+
+    resize: none;
+}
+
+.name-form__container>input:focus,
+.email-form__container>input:focus,
+.message-form__container>textarea:focus {
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.send-form__container {
+    display: grid;
+    place-items: center;
+}
+
+.send-form__container>button {
+    border: 1px solid rgba(0, 0, 0, 0.63);
+    color: black;
+    background-color: transparent;
+
+    padding: 3px;
+
+    border-radius: 30px;
+
+    font-size: 20px;
+    font-family: 'cormorant';
+
+    cursor: pointer;
+
+    width: 120px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    transition: 0.3s;
+}
+
+.send-form__container>button:hover {
+    color: white;
+    background-color: black;
+}
+
+.send-form__container>button span {
+    width: 20px;
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+}
+
+.send-form__container>button span>img {
+    width: 100%;
+
+    transition: 0.15s;
+}
+
+@media screen and (max-width:999px) {
+    .talk-section__title>h2 {
+        margin-top: 43px;
+        margin-bottom: 43px;
+    }
+
+    .form-container>form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:500px){
+    .talk-section__title>h2 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .social-media {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:300px){
+    .social-media__container>ol {
+        gap: 19px;
+    }
+}
